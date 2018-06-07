@@ -31,9 +31,9 @@ def scan_car(img, isShow):
     # We save those rects in a list
     for i,j in zip(x,y):
         hot_sectors.append(((i*8,400 + j*8), (i*8+64,400 +j*8+64)))
-    
+
     copy = np.copy(img)
-    
+
     for hots in hot_sectors:
         cv2.rectangle(copy, hots[0], hots[1], color, thickness)
 
@@ -41,6 +41,6 @@ def scan_car(img, isShow):
         fig = plt.figure(figsize=(12,20))
         plt.imshow(copy)
         plt.show()
-    
+
     cars_img, B = heat_n_thresholding(img, hot_sectors, thres, isShow)
     return cars_img, B

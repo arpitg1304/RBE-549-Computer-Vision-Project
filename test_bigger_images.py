@@ -18,4 +18,3 @@ def test_image(img, isShow):
         plt.show()
     cars_img, B = scan_car(img, isShow)
     return cars_img, B
-
